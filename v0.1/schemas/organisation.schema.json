@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standard.techtable.ro/v0.1/schemas/organisation.schema.json",
+  "title": "Organisation",
+  "description": "TechTable Standard v0.1: Organisation entity",
+  "type": "object",
+  "required": ["@context", "@type", "@id", "name", "domain"],
+  "properties": {
+    "@context": {
+      "description": "JSON-LD context. Must include the standard's context URL.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "object" }
+      ]
+    },
+    "@type": { "const": "Organization" },
+    "@id": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://"
+    },
+    "name": { "$ref": "#/$defs/i18nString" },
+    "description": { "$ref": "#/$defs/i18nString" },
+    "url": { "type": "string", "format": "uri" },
+    "logo": { "type": "string", "format": "uri" },
+    "role": { "$ref": "#/$defs/i18nString" },
+    "domain": { "$ref": "#/$defs/domain" },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "i18nString": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^[a-z]{2,3}(-[A-Za-z0-9]{1,8})*$": { "type": "string" }
+          },
+          "additionalProperties": false,
+          "minProperties": 1
+        }
+      ]
+    },
+    "domain": {
+      "type": "string",
+      "enum": ["tech", "entrepreneurial", "civic", "creative"]
+    }
+  }
+}

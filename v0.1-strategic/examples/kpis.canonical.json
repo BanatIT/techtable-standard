@@ -1,0 +1,56 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://standard.techtable.ro/v0.1/context.jsonld",
+    "https://standard.techtable.ro/v0.1-strategic/context.jsonld"
+  ],
+  "@type": "KPIs",
+  "@id": "https://publisher.example/kpis/innov-west-2026",
+  "inEcosystem": {
+    "@id": "https://publisher.example/ecosystems/innov-west"
+  },
+  "year": 2026,
+  "dateAssessed": "2026-02-10",
+  "capacity": [
+    {
+      "ro": "Organizații active: cel puțin 12",
+      "en": "Active organizations: at least 12"
+    },
+    {
+      "ro": "Numărul de profesioniști tech din regiune, măsurat anual",
+      "en": "Number of tech professionals in the region, measured annually"
+    },
+    {
+      "ro": "Un loc comun în care se vede tot ce se întâmplă",
+      "en": "One shared place showing everything that happens"
+    }
+  ],
+  "strategicActions": [
+    {
+      "ro": "Cel puțin 10 organizații la fiecare întâlnire",
+      "en": "At least 10 organizations at each meeting"
+    },
+    {
+      "ro": "Resurse atrase pentru proiecte comune: 15.000 EUR",
+      "en": "Resources attracted for joint projects: EUR 15,000"
+    },
+    {
+      "ro": "Două proiecte comune lansate pe an",
+      "en": "Two joint projects launched per year"
+    }
+  ],
+  "resultImpact": [
+    {
+      "ro": "Specialiști atrași sau păstrați în regiune",
+      "en": "Specialists attracted to or retained in the region"
+    },
+    {
+      "ro": "Ecosistem mai vizibil în afara regiunii",
+      "en": "An ecosystem more visible outside the region"
+    }
+  ],
+  "notes": {
+    "ro": "Cele trei categorii urmează formula din metodologie: impact = capacitate + acțiune strategică.",
+    "en": "The three categories follow the formula in the methodology: impact = capacity + strategic action."
+  }
+}

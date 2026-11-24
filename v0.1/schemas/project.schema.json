@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standard.techtable.ro/v0.1/schemas/project.schema.json",
+  "title": "Project",
+  "description": "TechTable Standard v0.1: Project entity",
+  "type": "object",
+  "required": ["@context", "@type", "@id", "name", "leadOrganisation", "domain", "status"],
+  "properties": {
+    "@context": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "object" }
+      ]
+    },
+    "@type": { "const": "Project" },
+    "@id": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://"
+    },
+    "name": { "$ref": "#/$defs/i18nString" },
+    "description": { "$ref": "#/$defs/i18nString" },
+    "leadOrganisation": { "$ref": "#/$defs/idRef" },
+    "partners": { "$ref": "#/$defs/i18nString" },
+    "domain": { "$ref": "#/$defs/domain" },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "status": {
+      "type": "string",
+      "enum": ["planning", "active", "completed", "paused"]
+    },
+    "startDateOnly": { "type": "string", "format": "date" },
+    "endDateOnly": { "type": "string", "format": "date" },
+    "url": { "type": "string", "format": "uri" },
+    "image": { "type": "string", "format": "uri" }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "i18nString": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^[a-z]{2,3}(-[A-Za-z0-9]{1,8})*$": { "type": "string" }
+          },
+          "additionalProperties": false,
+          "minProperties": 1
+        }
+      ]
+    },
+    "domain": {
+      "type": "string",
+      "enum": ["tech", "entrepreneurial", "civic", "creative"]
+    },
+    "idRef": {
+      "type": "object",
+      "required": ["@id"],
+      "properties": {
+        "@id": { "type": "string", "format": "uri" }
+      }
+    }
+  }
+}

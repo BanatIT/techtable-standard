@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://standard.techtable.ro/v0.1/context.jsonld"
+  ],
+  "@type": "Place",
+  "@id": "https://publisher.example/locations/atelier-central",
+  "name": {
+    "ro": "Atelier Central Timișoara",
+    "en": "Atelier Central Timișoara"
+  },
+  "address": {
+    "ro": "Strada Exemplu nr. 42, Timișoara",
+    "en": "42 Example Street, Timișoara"
+  },
+  "addressLocality": "Timișoara",
+  "addressCountry": "RO",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.7489,
+    "longitude": 21.2087
+  },
+  "isVirtual": false,
+  "url": "https://publisher.example/locations/atelier-central"
+}

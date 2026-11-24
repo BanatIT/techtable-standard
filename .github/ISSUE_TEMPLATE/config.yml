@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Cum contribui
+    url: https://github.com/BanatIT/techtable-standard/blob/main/CONTRIBUTING.md
+    about: Pașii pentru issues și pull requesturi.

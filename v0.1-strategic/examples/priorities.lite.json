@@ -1,0 +1,63 @@
+{
+  "type": "Priorities",
+  "id": "https://publisher.example/priorities/innov-west-2026",
+  "inEcosystem": "https://publisher.example/ecosystems/innov-west",
+  "year": 2026,
+  "dateAssessed": "2026-02-10",
+  "items": [
+    {
+      "name": {
+        "ro": "Întâlniri regulate ale organizațiilor",
+        "en": "Regular meetings of the organizations"
+      },
+      "description": {
+        "ro": "Patru întâlniri pe an, cu gazde prin rotație și agendă comună.",
+        "en": "Four meetings a year, with rotating hosts and a shared agenda."
+      },
+      "successMetric": {
+        "ro": "Cel puțin 10 organizații prezente la fiecare întâlnire",
+        "en": "At least 10 organizations present at each meeting"
+      },
+      "relatedProjects": [
+        "https://publisher.example/projects/setup-infrastructure-2026",
+        "https://publisher.example/projects/ecosystem-mapping-2026"
+      ]
+    },
+    {
+      "name": {
+        "ro": "Calendar comun de evenimente",
+        "en": "Shared events calendar"
+      },
+      "description": {
+        "ro": "Organizațiile membre își publică evenimentele în formatul standardului, ca să poată fi adunate într-un singur loc.",
+        "en": "Member organizations publish their events in the standard format, so they can be gathered in one place."
+      },
+      "successMetric": {
+        "ro": "Trei sferturi din evenimentele publice ale membrilor, publicate în format până la finalul anului",
+        "en": "Three quarters of the members' public events published in the format by the end of the year"
+      },
+      "relatedProjects": [
+        "https://publisher.example/projects/events-calendar-2026"
+      ]
+    },
+    {
+      "name": {
+        "ro": "Evaluare și plan anual",
+        "en": "Annual review and plan"
+      },
+      "description": {
+        "ro": "Analiză SWOT toamna, plan pentru anul următor și un raport public.",
+        "en": "SWOT analysis in autumn, a plan for the following year and a public report."
+      },
+      "successMetric": {
+        "ro": "Planul e acceptat de majoritatea organizațiilor membre",
+        "en": "The plan is accepted by most member organizations"
+      },
+      "relatedProjects": []
+    }
+  ],
+  "notes": {
+    "ro": "Priorități stabilite la întâlnirea de toamnă.",
+    "en": "Priorities agreed at the autumn meeting."
+  }
+}

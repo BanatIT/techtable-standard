@@ -1,0 +1,31 @@
+{
+  "type": "Event",
+  "id": "https://publisher.example/events/js-west-meetup-100",
+  "name": {
+    "ro": "JS West Meetup #100: Ediția aniversară",
+    "en": "JS West Meetup #100: Anniversary edition"
+  },
+  "short": {
+    "ro": "Ediția 100 a comunității JS West",
+    "en": "100th edition of the JS West community"
+  },
+  "description": {
+    "ro": "Meetup aniversar dedicat comunității JavaScript din vestul României. Speakeri din industrie locală și internațională, networking, retrospectivă a comunității.",
+    "en": "Anniversary meetup dedicated to the JavaScript community of western Romania. Local and international industry speakers, networking, and a retrospective of the community."
+  },
+  "organizer": "https://publisher.example/orgs/js-west-community",
+  "location": "https://publisher.example/locations/atelier-central",
+  "project": "https://publisher.example/projects/js-west-2026",
+  "startDate": "2026-09-15T18:00:00+03:00",
+  "endDate": "2026-09-15T21:00:00+03:00",
+  "domain": "tech",
+  "tags": ["javascript", "meetup", "anniversary", "frontend", "backend"],
+  "category": "meetup",
+  "url": "https://publisher.example/events/js-west-meetup-100",
+  "image": "https://publisher.example/assets/events/jsw-100-cover.jpg",
+  "maximumAttendeeCapacity": 120,
+  "isAccessibleForFree": true,
+  "ticketsUrl": "https://publisher.example/events/js-west-meetup-100/register",
+  "performer": ["https://publisher.example/members/ada-petrescu"],
+  "speakersCount": 4
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standard.techtable.ro/v0.1-strategic/schemas/maturity.schema.json",
+  "title": "Maturity",
+  "description": "TechTable Standard v0.1-strategic: Maturity (point-in-time self-assessment on the 5-level scale)",
+  "type": "object",
+  "required": ["@context", "@type", "@id", "inEcosystem", "dateAssessed", "level", "levelName"],
+  "oneOf": [
+    { "properties": { "level": { "const": 1 }, "levelName": { "const": "inexistent" } } },
+    { "properties": { "level": { "const": 2 }, "levelName": { "const": "incipient" } } },
+    { "properties": { "level": { "const": 3 }, "levelName": { "const": "intentional" } } },
+    { "properties": { "level": { "const": 4 }, "levelName": { "const": "integrated" } } },
+    { "properties": { "level": { "const": 5 }, "levelName": { "const": "inspirational" } } }
+  ],
+  "properties": {
+    "@context": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "object" }
+      ]
+    },
+    "@type": { "const": "Maturity" },
+    "@id": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://"
+    },
+    "inEcosystem": { "$ref": "#/$defs/idRef" },
+    "dateAssessed": { "type": "string", "format": "date" },
+    "level": { "type": "integer", "minimum": 1, "maximum": 5 },
+    "levelName": {
+      "type": "string",
+      "enum": ["inexistent", "incipient", "intentional", "integrated", "inspirational"]
+    },
+    "model": { "type": "string", "format": "uri" },
+    "notes": { "$ref": "#/$defs/i18nString" }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "i18nString": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^[a-z]{2,3}(-[A-Za-z0-9]{1,8})*$": { "type": "string" }
+          },
+          "additionalProperties": false,
+          "minProperties": 1
+        }
+      ]
+    },
+    "idRef": {
+      "type": "object",
+      "required": ["@id"],
+      "properties": {
+        "@id": { "type": "string", "format": "uri", "pattern": "^https?://" }
+      }
+    }
+  }
+}

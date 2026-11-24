@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standard.techtable.ro/v0.1/schemas/event.schema.json",
+  "title": "Event",
+  "description": "TechTable Standard v0.1: Event entity",
+  "type": "object",
+  "required": ["@context", "@type", "@id", "name", "organizer", "location", "startDate", "domain"],
+  "properties": {
+    "@context": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "object" }
+      ]
+    },
+    "@type": { "const": "Event" },
+    "@id": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://"
+    },
+    "name": { "$ref": "#/$defs/i18nString" },
+    "short": { "$ref": "#/$defs/i18nString" },
+    "description": { "$ref": "#/$defs/i18nString" },
+    "organizer": { "$ref": "#/$defs/idRef" },
+    "location": { "$ref": "#/$defs/idRef" },
+    "project": { "$ref": "#/$defs/idRef" },
+    "startDate": { "$ref": "#/$defs/dateOrDateTime" },
+    "endDate": { "$ref": "#/$defs/dateOrDateTime" },
+    "domain": { "$ref": "#/$defs/domain" },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "category": { "type": "string" },
+    "eventStatus": {
+      "type": "string",
+      "enum": ["EventScheduled", "EventCancelled", "EventPostponed", "EventRescheduled", "EventMovedOnline"],
+      "default": "EventScheduled"
+    },
+    "url": { "type": "string", "format": "uri" },
+    "image": { "type": "string", "format": "uri" },
+    "maximumAttendeeCapacity": { "type": "integer", "minimum": 0 },
+    "isAccessibleForFree": { "type": "boolean" },
+    "ticketsUrl": { "type": "string", "format": "uri" },
+    "photosUrl": { "type": "string", "format": "uri" },
+    "performer": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/idRef" },
+      "uniqueItems": true
+    },
+    "speakersCount": { "type": "integer", "minimum": 0 },
+    "realParticipants": { "type": "integer", "minimum": 0 }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "i18nString": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^[a-z]{2,3}(-[A-Za-z0-9]{1,8})*$": { "type": "string" }
+          },
+          "additionalProperties": false,
+          "minProperties": 1
+        }
+      ]
+    },
+    "domain": {
+      "type": "string",
+      "enum": ["tech", "entrepreneurial", "civic", "creative"]
+    },
+    "idRef": {
+      "type": "object",
+      "required": ["@id"],
+      "properties": {
+        "@id": { "type": "string", "format": "uri" }
+      }
+    },
+    "dateOrDateTime": {
+      "type": "string",
+      "anyOf": [
+        { "format": "date-time" },
+        { "format": "date" }
+      ]
+    }
+  }
+}

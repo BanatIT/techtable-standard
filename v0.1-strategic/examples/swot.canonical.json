@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://standard.techtable.ro/v0.1/context.jsonld",
+    "https://standard.techtable.ro/v0.1-strategic/context.jsonld"
+  ],
+  "@type": "SWOT",
+  "@id": "https://publisher.example/swot/innov-west-2025",
+  "inEcosystem": {
+    "@id": "https://publisher.example/ecosystems/innov-west"
+  },
+  "year": 2025,
+  "dateAssessed": "2025-11-12",
+  "strengths": [
+    {
+      "ro": "Comunități tehnice active, cu întâlniri lunare",
+      "en": "Active technical communities with monthly meetups"
+    },
+    {
+      "ro": "Companii de software de mărimi diferite",
+      "en": "Software companies of different sizes"
+    },
+    {
+      "ro": "Universități cu programe de informatică",
+      "en": "Universities with computer science programs"
+    }
+  ],
+  "weaknesses": [
+    {
+      "ro": "Organizațiile nu își cunosc reciproc calendarul",
+      "en": "Organizations do not know each other's calendars"
+    },
+    {
+      "ro": "Puține proiecte făcute împreună",
+      "en": "Few joint projects"
+    },
+    {
+      "ro": "Informația despre ecosistem e împrăștiată",
+      "en": "Information about the ecosystem is scattered"
+    }
+  ],
+  "opportunities": [
+    {
+      "ro": "Finanțări regionale pentru proiecte comune",
+      "en": "Regional funding for joint projects"
+    },
+    {
+      "ro": "Un calendar comun de evenimente",
+      "en": "A shared events calendar"
+    },
+    {
+      "ro": "Un eveniment anual comun",
+      "en": "A joint annual event"
+    }
+  ],
+  "threats": [
+    {
+      "ro": "Specialiștii pleacă spre orașe mai mari",
+      "en": "Specialists leaving for larger cities"
+    },
+    {
+      "ro": "Dependența de un singur sector",
+      "en": "Dependence on a single sector"
+    }
+  ],
+  "notes": {
+    "ro": "Sinteză din sesiunea SWOT de la întâlnirea de toamnă.",
+    "en": "Summary of the SWOT session at the autumn meeting."
+  }
+}

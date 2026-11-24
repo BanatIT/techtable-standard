@@ -1,0 +1,22 @@
+name: Defect
+description: Specificația, o schemă sau un exemplu e greșit ori se contrazice cu altceva.
+labels: ["defect"]
+body:
+  - type: textarea
+    id: ce
+    attributes:
+      label: Ce e greșit
+      description: Unde anume (fișier, secțiune) și ce ai observat.
+    validations:
+      required: true
+  - type: textarea
+    id: reproducere
+    attributes:
+      label: Cum se vede
+      description: Un document JSON cât mai scurt care arată problema, plus ce te așteptai să se întâmple.
+      render: json
+  - type: textarea
+    id: propunere
+    attributes:
+      label: Cum ai rezolva
+      description: Opțional. Dacă ai o idee, scrie-o aici.

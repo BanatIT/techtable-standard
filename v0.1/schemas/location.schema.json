@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standard.techtable.ro/v0.1/schemas/location.schema.json",
+  "title": "Location",
+  "description": "TechTable Standard v0.1: Place entity",
+  "type": "object",
+  "required": ["@context", "@type", "@id", "name"],
+  "properties": {
+    "@context": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "object" }
+      ]
+    },
+    "@type": { "const": "Place" },
+    "@id": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://"
+    },
+    "name": { "$ref": "#/$defs/i18nString" },
+    "address": { "$ref": "#/$defs/i18nString" },
+    "addressLocality": { "type": "string" },
+    "addressCountry": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$",
+      "description": "ISO 3166-1 alpha-2"
+    },
+    "geo": {
+      "type": "object",
+      "properties": {
+        "@type": { "const": "GeoCoordinates" },
+        "latitude": { "type": "number", "minimum": -90, "maximum": 90 },
+        "longitude": { "type": "number", "minimum": -180, "maximum": 180 }
+      },
+      "required": ["latitude", "longitude"]
+    },
+    "isVirtual": { "type": "boolean", "default": false },
+    "url": { "type": "string", "format": "uri" }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "i18nString": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^[a-z]{2,3}(-[A-Za-z0-9]{1,8})*$": { "type": "string" }
+          },
+          "additionalProperties": false,
+          "minProperties": 1
+        }
+      ]
+    }
+  }
+}

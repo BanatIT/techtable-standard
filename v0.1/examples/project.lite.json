@@ -1,0 +1,24 @@
+{
+  "type": "Project",
+  "id": "https://publisher.example/projects/open-civic-data-2026",
+  "name": {
+    "ro": "Open Civic Data Mapping 2026",
+    "en": "Open Civic Data Mapping 2026"
+  },
+  "description": {
+    "ro": "Inițiativă anuală de cartografiere a seturilor de date deschise relevante pentru ecosistemul civic din vestul României. Rezultat: portal public cu metadata standardizate și API pentru consumatori.",
+    "en": "Annual initiative to map open data sets relevant to the civic ecosystem in western Romania. Output: public portal with standardised metadata and API for consumers."
+  },
+  "leadOrganisation": "https://publisher.example/orgs/civic-data-lab-tm",
+  "partners": {
+    "ro": "Banat Innovation Hub, JS West Community, Universitatea Tehnică Exemplu (informal, text liber în v0.1)",
+    "en": "Banat Innovation Hub, JS West Community, Example Technical University (informal, free text in v0.1)"
+  },
+  "domain": "civic",
+  "tags": ["open-data", "transparency", "mapping", "api"],
+  "status": "active",
+  "startDateOnly": "2026-02-01",
+  "endDateOnly": "2026-12-15",
+  "url": "https://publisher.example/projects/open-civic-data-2026",
+  "image": "https://publisher.example/assets/projects/ocdm-2026-cover.jpg"
+}

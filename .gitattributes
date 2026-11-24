@@ -1,0 +1,3 @@
+* text=auto eol=lf
+*.json text
+*.jsonld text linguist-language=JSON

@@ -1,0 +1,33 @@
+name: Propunere
+description: Un caz real pe care formatul nu îl poate exprima, cu schimbarea pe care o sugerezi.
+labels: ["propunere"]
+body:
+  - type: textarea
+    id: caz
+    attributes:
+      label: Cazul
+      description: Ce date reale nu poți descrie acum. Un exemplu concret ajută cel mai mult.
+    validations:
+      required: true
+  - type: textarea
+    id: schimbare
+    attributes:
+      label: Schimbarea propusă
+      description: Ce câmp, ce valoare sau ce regulă adaugi, modifici sau scoți.
+    validations:
+      required: true
+  - type: dropdown
+    id: compatibilitate
+    attributes:
+      label: Documentele deja scrise rămân valide?
+      options:
+        - Da
+        - Nu, e nevoie de modificări în ele
+        - Nu știu
+    validations:
+      required: true
+  - type: textarea
+    id: alternative
+    attributes:
+      label: Alte variante la care te-ai gândit
+      description: Opțional.

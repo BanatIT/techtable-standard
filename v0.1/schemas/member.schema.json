@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standard.techtable.ro/v0.1/schemas/member.schema.json",
+  "title": "Member",
+  "description": "TechTable Standard v0.1: Person entity (member of an Organization)",
+  "type": "object",
+  "required": ["@context", "@type", "@id", "name", "affiliation"],
+  "properties": {
+    "@context": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "object" }
+      ]
+    },
+    "@type": { "const": "Person" },
+    "@id": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://"
+    },
+    "name": { "type": "string", "minLength": 1 },
+    "affiliation": { "$ref": "#/$defs/idRef" },
+    "email": { "type": "string", "format": "email" },
+    "sameAs": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" },
+      "uniqueItems": true
+    },
+    "image": { "type": "string", "format": "uri" },
+    "description": { "$ref": "#/$defs/i18nString" }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "i18nString": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^[a-z]{2,3}(-[A-Za-z0-9]{1,8})*$": { "type": "string" }
+          },
+          "additionalProperties": false,
+          "minProperties": 1
+        }
+      ]
+    },
+    "idRef": {
+      "type": "object",
+      "required": ["@id"],
+      "properties": {
+        "@id": { "type": "string", "format": "uri" }
+      }
+    }
+  }
+}

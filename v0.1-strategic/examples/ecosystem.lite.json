@@ -1,0 +1,31 @@
+{
+  "type": "Ecosystem",
+  "id": "https://publisher.example/ecosystems/innov-west",
+  "name": {
+    "ro": "Innov West",
+    "en": "Innov West"
+  },
+  "description": {
+    "ro": "Grup de lucru al organizațiilor tech dintr-o regiune. Își coordonează calendarul, proiectele comune și evaluarea anuală.",
+    "en": "Working group of the tech organizations in a region. They coordinate their calendar, joint projects and annual review."
+  },
+  "domain": "tech",
+  "facilitator": "https://publisher.example/orgs/banat-innovation-hub",
+  "member": [
+    "https://publisher.example/orgs/banat-innovation-hub",
+    "https://publisher.example/orgs/atelier-central",
+    "https://publisher.example/orgs/js-west-community",
+    "https://publisher.example/orgs/civic-data-lab-tm"
+  ],
+  "addressLocality": "Timișoara",
+  "addressRegion": "Vest",
+  "addressCountry": "RO",
+  "url": "https://publisher.example",
+  "logo": "https://publisher.example/assets/innov-west-logo.png",
+  "tags": [
+    "regional",
+    "federated",
+    "tech-ecosystem"
+  ],
+  "currentMaturity": "https://publisher.example/maturity/innov-west-2026"
+}

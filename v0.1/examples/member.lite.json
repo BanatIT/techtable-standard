@@ -1,0 +1,16 @@
+{
+  "type": "Person",
+  "id": "https://publisher.example/members/ada-petrescu",
+  "name": "Ada Petrescu",
+  "affiliation": "https://publisher.example/orgs/banat-innovation-hub",
+  "email": "ada.petrescu@publisher.example",
+  "sameAs": [
+    "https://social.example/in/ada-petrescu",
+    "https://code.example/ada-petrescu"
+  ],
+  "image": "https://publisher.example/assets/members/ada-petrescu.jpg",
+  "description": {
+    "ro": "Director comunitate la Banat Innovation Hub. Coordonează inițiativele de dezvoltare a ecosistemului tech regional.",
+    "en": "Community director at Banat Innovation Hub. Coordinates regional tech ecosystem development initiatives."
+  }
+}

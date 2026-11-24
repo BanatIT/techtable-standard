@@ -1,0 +1,11 @@
+name: Întrebare
+description: Ceva ce nu e clar din specificație.
+labels: ["întrebare"]
+body:
+  - type: textarea
+    id: intrebare
+    attributes:
+      label: Ce nu e clar
+      description: Spune ce încercai să faci și unde te-ai oprit. Dacă e vorba de o secțiune anume, pune linkul.
+    validations:
+      required: true

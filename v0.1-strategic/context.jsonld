@@ -1,0 +1,59 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+
+    "schema": "https://schema.org/",
+    "core": "https://standard.techtable.ro/v0.1/",
+    "strategic": "https://standard.techtable.ro/v0.1-strategic/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Ecosystem": "strategic:Ecosystem",
+    "SWOT": "strategic:SWOT",
+    "Priorities": "strategic:Priorities",
+    "KPIs": "strategic:KPIs",
+    "Maturity": "strategic:Maturity",
+
+    "name": { "@id": "schema:name", "@container": "@language" },
+    "description": { "@id": "schema:description", "@container": "@language" },
+    "url": { "@id": "schema:url", "@type": "@id" },
+    "logo": { "@id": "schema:logo", "@type": "@id" },
+    "addressLocality": "schema:addressLocality",
+    "addressRegion": "schema:addressRegion",
+    "addressCountry": "schema:addressCountry",
+    "tags": { "@id": "schema:keywords", "@container": "@set" },
+    "domain": { "@id": "core:domain", "@type": "@vocab" },
+    "member": { "@id": "schema:member", "@type": "@id", "@container": "@set" },
+
+    "facilitator": { "@id": "strategic:facilitator", "@type": "@id" },
+    "currentMaturity": { "@id": "strategic:currentMaturity", "@type": "@id" },
+
+    "inEcosystem": { "@id": "strategic:inEcosystem", "@type": "@id" },
+    "year": { "@id": "strategic:year", "@type": "xsd:integer" },
+    "dateAssessed": { "@id": "strategic:dateAssessed", "@type": "xsd:date" },
+    "notes": { "@id": "strategic:notes", "@container": "@language" },
+
+    "strengths": { "@id": "strategic:strengths", "@container": "@set" },
+    "weaknesses": { "@id": "strategic:weaknesses", "@container": "@set" },
+    "opportunities": { "@id": "strategic:opportunities", "@container": "@set" },
+    "threats": { "@id": "strategic:threats", "@container": "@set" },
+
+    "items": { "@id": "strategic:items", "@container": "@set" },
+    "successMetric": { "@id": "strategic:successMetric", "@container": "@language" },
+    "relatedProjects": { "@id": "strategic:relatedProjects", "@type": "@id", "@container": "@set" },
+
+    "capacity": { "@id": "strategic:capacity", "@container": "@set" },
+    "strategicActions": { "@id": "strategic:strategicActions", "@container": "@set" },
+    "resultImpact": { "@id": "strategic:resultImpact", "@container": "@set" },
+
+    "level": { "@id": "strategic:level", "@type": "xsd:integer" },
+    "levelName": { "@id": "strategic:levelName", "@type": "@vocab" },
+    "model": { "@id": "strategic:model", "@type": "@id" },
+
+    "inexistent": "strategic:inexistent",
+    "incipient": "strategic:incipient",
+    "intentional": "strategic:intentional",
+    "integrated": "strategic:integrated",
+    "inspirational": "strategic:inspirational"
+  }
+}

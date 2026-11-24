@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standard.techtable.ro/v0.1-strategic/schemas/ecosystem.schema.json",
+  "title": "Ecosystem",
+  "description": "TechTable Standard v0.1-strategic: Ecosystem entity (the coordination mechanism itself)",
+  "type": "object",
+  "required": ["@context", "@type", "@id", "name", "domain", "facilitator"],
+  "properties": {
+    "@context": {
+      "description": "JSON-LD context. Must include the strategic standard's context URL.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "object" }
+      ]
+    },
+    "@type": { "const": "Ecosystem" },
+    "@id": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://"
+    },
+    "name": { "$ref": "#/$defs/i18nString" },
+    "description": { "$ref": "#/$defs/i18nString" },
+    "domain": { "$ref": "#/$defs/domain" },
+    "facilitator": { "$ref": "#/$defs/idRef" },
+    "member": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/idRef" },
+      "uniqueItems": true
+    },
+    "addressLocality": { "type": "string" },
+    "addressRegion": { "type": "string" },
+    "addressCountry": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "url": { "type": "string", "format": "uri" },
+    "logo": { "type": "string", "format": "uri" },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "currentMaturity": { "$ref": "#/$defs/idRef" }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "i18nString": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^[a-z]{2,3}(-[A-Za-z0-9]{1,8})*$": { "type": "string" }
+          },
+          "additionalProperties": false,
+          "minProperties": 1
+        }
+      ]
+    },
+    "domain": {
+      "type": "string",
+      "enum": ["tech", "entrepreneurial", "civic", "creative"]
+    },
+    "idRef": {
+      "type": "object",
+      "required": ["@id"],
+      "properties": {
+        "@id": { "type": "string", "format": "uri", "pattern": "^https?://" }
+      }
+    }
+  }
+}

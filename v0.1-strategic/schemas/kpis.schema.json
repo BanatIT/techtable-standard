@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standard.techtable.ro/v0.1-strategic/schemas/kpis.schema.json",
+  "title": "KPIs",
+  "description": "TechTable Standard v0.1-strategic: KPIs (annual indicators organized by methodology formula)",
+  "type": "object",
+  "required": ["@context", "@type", "@id", "inEcosystem", "year"],
+  "anyOf": [
+    { "required": ["capacity"], "properties": { "capacity": { "minItems": 1 } } },
+    { "required": ["strategicActions"], "properties": { "strategicActions": { "minItems": 1 } } },
+    { "required": ["resultImpact"], "properties": { "resultImpact": { "minItems": 1 } } }
+  ],
+  "properties": {
+    "@context": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "object" }
+      ]
+    },
+    "@type": { "const": "KPIs" },
+    "@id": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://"
+    },
+    "inEcosystem": { "$ref": "#/$defs/idRef" },
+    "year": { "type": "integer", "minimum": 1900, "maximum": 2200 },
+    "dateAssessed": { "type": "string", "format": "date" },
+    "capacity": { "$ref": "#/$defs/i18nStringArray" },
+    "strategicActions": { "$ref": "#/$defs/i18nStringArray" },
+    "resultImpact": { "$ref": "#/$defs/i18nStringArray" },
+    "notes": { "$ref": "#/$defs/i18nString" }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "i18nString": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^[a-z]{2,3}(-[A-Za-z0-9]{1,8})*$": { "type": "string" }
+          },
+          "additionalProperties": false,
+          "minProperties": 1
+        }
+      ]
+    },
+    "i18nStringArray": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/i18nString" }
+    },
+    "idRef": {
+      "type": "object",
+      "required": ["@id"],
+      "properties": {
+        "@id": { "type": "string", "format": "uri", "pattern": "^https?://" }
+      }
+    }
+  }
+}

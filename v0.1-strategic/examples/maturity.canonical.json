@@ -1,0 +1,20 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://standard.techtable.ro/v0.1/context.jsonld",
+    "https://standard.techtable.ro/v0.1-strategic/context.jsonld"
+  ],
+  "@type": "Maturity",
+  "@id": "https://publisher.example/maturity/innov-west-2026",
+  "inEcosystem": {
+    "@id": "https://publisher.example/ecosystems/innov-west"
+  },
+  "dateAssessed": "2026-02-10",
+  "level": 3,
+  "levelName": "intentional",
+  "model": "https://standard.techtable.ro/v0.1-strategic/maturity-model",
+  "notes": {
+    "ro": "Auto-evaluare: nivelul 3 din 5 (Intentional). Există un ciclu anual de evaluare și planificare, cu rezultate agreate. Lipsește încă raportarea publică.",
+    "en": "Self-assessment: level 3 of 5 (Intentional). There is an annual review and planning cycle with agreed outputs. Public reporting is still missing."
+  }
+}

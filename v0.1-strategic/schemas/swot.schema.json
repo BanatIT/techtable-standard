@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standard.techtable.ro/v0.1-strategic/schemas/swot.schema.json",
+  "title": "SWOT",
+  "description": "TechTable Standard v0.1-strategic: SWOT (annual strengths/weaknesses/opportunities/threats snapshot)",
+  "type": "object",
+  "required": ["@context", "@type", "@id", "inEcosystem", "year"],
+  "anyOf": [
+    { "required": ["strengths"], "properties": { "strengths": { "minItems": 1 } } },
+    { "required": ["weaknesses"], "properties": { "weaknesses": { "minItems": 1 } } },
+    { "required": ["opportunities"], "properties": { "opportunities": { "minItems": 1 } } },
+    { "required": ["threats"], "properties": { "threats": { "minItems": 1 } } }
+  ],
+  "properties": {
+    "@context": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "object" }
+      ]
+    },
+    "@type": { "const": "SWOT" },
+    "@id": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://"
+    },
+    "inEcosystem": { "$ref": "#/$defs/idRef" },
+    "year": { "type": "integer", "minimum": 1900, "maximum": 2200 },
+    "dateAssessed": { "type": "string", "format": "date" },
+    "strengths": { "$ref": "#/$defs/i18nStringArray" },
+    "weaknesses": { "$ref": "#/$defs/i18nStringArray" },
+    "opportunities": { "$ref": "#/$defs/i18nStringArray" },
+    "threats": { "$ref": "#/$defs/i18nStringArray" },
+    "notes": { "$ref": "#/$defs/i18nString" }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "i18nString": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^[a-z]{2,3}(-[A-Za-z0-9]{1,8})*$": { "type": "string" }
+          },
+          "additionalProperties": false,
+          "minProperties": 1
+        }
+      ]
+    },
+    "i18nStringArray": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/i18nString" }
+    },
+    "idRef": {
+      "type": "object",
+      "required": ["@id"],
+      "properties": {
+        "@id": { "type": "string", "format": "uri", "pattern": "^https?://" }
+      }
+    }
+  }
+}

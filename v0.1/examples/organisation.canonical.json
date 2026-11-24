@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://standard.techtable.ro/v0.1/context.jsonld"
+  ],
+  "@type": "Organization",
+  "@id": "https://publisher.example/orgs/banat-innovation-hub",
+  "name": {
+    "ro": "Banat Innovation Hub",
+    "en": "Banat Innovation Hub"
+  },
+  "description": {
+    "ro": "Asociație care dezvoltă ecosistemul de inovație tech din vestul României, conectând companii, universități și administrație.",
+    "en": "Association developing the innovative tech ecosystem in western Romania, connecting companies, universities and public administration."
+  },
+  "url": "https://publisher.example",
+  "logo": "https://publisher.example/assets/bih-logo.png",
+  "role": {
+    "ro": "Facilitator al ecosistemului tech regional",
+    "en": "Regional tech ecosystem facilitator"
+  },
+  "domain": "tech",
+  "tags": ["ecosystem", "innovation", "association", "western-romania"]
+}
